@@ -2,6 +2,7 @@ package key
 
 import (
 	"strconv"
+	"strings"
 )
 
 type KeyUint64 uint64
@@ -27,6 +28,17 @@ func (u KeyUint64) ToUint64() uint64 {
 }
 
 type KeyUint64List []KeyUint64
+
+func (keys KeyUint64List) ToStringList() (strList []string) {
+	strList = make([]string, len(keys))
+	for idx, _ := range keys {
+		strList[idx] = keys[idx].ToString()
+	}
+	return
+}
+func (keys KeyUint64List) Join(sep string) string {
+	return strings.Join(keys.ToStringList(), sep)
+}
 
 func (keys KeyUint64List) IsInList(Key KeyUint64) bool {
 	for _, tmpKey := range keys {

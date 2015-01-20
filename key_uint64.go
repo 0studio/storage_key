@@ -25,3 +25,14 @@ func (u KeyUint64) ToString() string {
 func (u KeyUint64) ToUint64() uint64 {
 	return uint64(u)
 }
+
+type KeyUint64List []KeyUint64
+
+func (keys KeyUint64List) IsInList(Key KeyUint64) bool {
+	for _, tmpKey := range keys {
+		if tmpKey.Equal(Key) {
+			return true
+		}
+	}
+	return false
+}

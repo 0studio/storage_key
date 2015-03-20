@@ -25,6 +25,12 @@ func (u KeyInt) ToString() string {
 func (u KeyInt) ToInt() int {
 	return int(u)
 }
+func (u KeyInt) SumLen() int {
+	return 1
+}
+func (u KeyInt) GetSumByIdx(_ int) Sum {
+	return u
+}
 
 func (u KeyInt) ToSum() int {
 	return int(u)

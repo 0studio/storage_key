@@ -4,7 +4,7 @@ type Key interface {
 	ToString() string
 }
 type Sum interface {
-	ToString() string
+	// ToString() string
 	ToSum() int
 	SumLen() int
 	GetSumByIdx(idx int) Sum

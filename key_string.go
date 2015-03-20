@@ -16,12 +16,15 @@ func (this String) ToInt() (value int) {
 	if err == nil {
 		return
 	}
+	return
+}
+
+func (this String) ToSum() (value int) {
 	for _, byteValue := range this.ToString() {
 		value += int(byteValue)
 	}
 	return
 }
-
 func (u String) Equal(u2 String) bool {
 	return u == u2
 }

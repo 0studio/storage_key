@@ -30,6 +30,9 @@ func (u KeyUint64) ToUint64() uint64 {
 func (u KeyUint64) ToInt() int {
 	return int(u)
 }
+func (u KeyUint64) ToSum() int {
+	return int(u)
+}
 
 type KeyUint64List []KeyUint64
 

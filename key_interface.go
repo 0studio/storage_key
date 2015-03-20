@@ -6,10 +6,8 @@ type Key interface {
 type Sum interface {
 	ToString() string
 	ToSum() int
-}
-type SumList interface {
-	Sum
 	SumLen() int
+	GetSumByIdx(idx int) Sum
 }
 type Int interface {
 	ToString() string

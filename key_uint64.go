@@ -33,6 +33,12 @@ func (u KeyUint64) ToInt() int {
 func (u KeyUint64) ToSum() int {
 	return int(u)
 }
+func (u KeyUint64) SumLen() int {
+	return 1
+}
+func (u KeyUint64) GetSumByIdx(_ int) Sum {
+	return u
+}
 
 type KeyUint64List []KeyUint64
 
@@ -43,10 +49,16 @@ func (keys KeyUint64List) ToString() string {
 	return keys.Join("|")
 }
 func (keys KeyUint64List) ToSum() (sum int) {
-	for idx, k := range keys {
+	for _, k := range keys {
 		sum += k.ToSum()
 	}
 	return
+}
+func (keys KeyUint64List) GetSumByIdx(idx int) Sum {
+	if idx < len(keys) && idx > -1 {
+		return keys[idx]
+	}
+	return nil
 }
 
 func (keys KeyUint64List) ToStringList() (strList []string) {

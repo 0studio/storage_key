@@ -25,11 +25,28 @@ func (this String) ToSum() (value int) {
 	}
 	return
 }
+func (this String) SumLen() (value int) {
+	return 1
+}
+func (this String) GetSumByIdx(idx int) Sum {
+	return this
+}
+
 func (u String) Equal(u2 String) bool {
 	return u == u2
 }
 
 type StringList []String
+
+func (keys StringList) ToSum() (value int) {
+	return String(keys.Join(",")).ToSum()
+}
+func (keys StringList) SumLen() (value int) {
+	return len(keys)
+}
+func (keys StringList) GetSumByIdx(idx int) Sum {
+	return keys[idx]
+}
 
 func (keys StringList) ToStringList() (strList []string) {
 	strList = make([]string, len(keys))

@@ -1,6 +1,7 @@
 package key
 
 import (
+	"strconv"
 	"strings"
 )
 
@@ -8,6 +9,17 @@ type String string
 
 func (this String) ToString() string {
 	return string(this)
+}
+func (this String) ToInt() (value int) {
+	var err error
+	value, err = strconv.Atoi(this.ToString())
+	if err == nil {
+		return
+	}
+	for _, byteValue := range this.ToString() {
+		value += int(byteValue)
+	}
+	return
 }
 
 func (u String) Equal(u2 String) bool {

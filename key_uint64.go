@@ -27,6 +27,10 @@ func (u KeyUint64) ToUint64() uint64 {
 	return uint64(u)
 }
 
+func (u KeyUint64) ToInt() int {
+	return int(u)
+}
+
 type KeyUint64List []KeyUint64
 
 func (keys KeyUint64List) ToStringList() (strList []string) {

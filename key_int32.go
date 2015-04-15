@@ -80,3 +80,17 @@ func (keys KeyInt32List) IsInList(Key KeyInt32) bool {
 	}
 	return false
 }
+
+func (keys KeyInt32List) Remove(Key KeyInt32) (ret KeyInt32List) {
+	ret = make(KeyInt32List, len(keys), len(keys))
+	var index int = 0
+	for _, value := range keys {
+		if !value.Equal(Key) {
+			ret[index] = value
+			index++
+		}
+	}
+	ret = ret[:index]
+	return
+
+}

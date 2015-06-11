@@ -2,6 +2,7 @@ package key
 
 import (
 	"fmt"
+	"strconv"
 )
 
 type KeyUint64Int32 struct {
@@ -22,7 +23,7 @@ func (u *KeyUint64Int32) FromString(str string) bool {
 }
 
 func (u KeyUint64Int32) ToString() string {
-	return fmt.Sprintf("%d-%d", u.key1, u.key2)
+	return strconv.FormatUint(u.key1, 10) + "-" + strconv.Itoa(int(u.key2))
 }
 func (u KeyUint64Int32) GetKeys() (key1 uint64, key2 int32) {
 	key1 = u.key1

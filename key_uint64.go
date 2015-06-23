@@ -1,6 +1,7 @@
 package key
 
 import (
+	"math/rand"
 	"strconv"
 	"strings"
 )
@@ -79,4 +80,11 @@ func (keys KeyUint64List) IsInList(Key KeyUint64) bool {
 		}
 	}
 	return false
+}
+
+func (keys KeyUint64List) Shuffle() {
+	for i := range keys {
+		j := rand.Intn(i + 1)
+		keys[i], keys[j] = keys[j], keys[i]
+	}
 }

@@ -6,6 +6,7 @@ import (
 )
 
 type String string
+type KeyString String
 
 func (this String) ToString() string {
 	return string(this)
@@ -32,7 +33,7 @@ func (this String) GetSumByIdx(idx int) Sum {
 	return this
 }
 
-func (u String) Equal(u2 String) bool {
+func (u String) Equal(u2 Key) bool {
 	return u == u2
 }
 

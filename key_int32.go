@@ -6,6 +6,7 @@ import (
 )
 
 type KeyInt32 int32
+type Int32 KeyInt32
 
 func (u KeyInt32) Equal(u2 KeyInt32) bool {
 	return u.ToInt32() == u2.ToInt32()

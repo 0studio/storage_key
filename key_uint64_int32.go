@@ -10,6 +10,9 @@ type KeyUint64Int32 struct {
 	key2 int32
 }
 
+func NewKeyUint64Int32Key(key1 KeyUint64, key2 KeyInt32) KeyUint64Int32 {
+	return KeyUint64Int32{key1: key1.ToUint64(), key2: key2.ToInt32()}
+}
 func NewKeyUint64Int32(key1 uint64, key2 int32) KeyUint64Int32 {
 	return KeyUint64Int32{key1: key1, key2: key2}
 }

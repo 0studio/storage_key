@@ -21,6 +21,9 @@ func (u *KeyInt32) FromString(str string) bool {
 	return true
 }
 
+func (u KeyInt32) String() string {
+	return u.ToString()
+}
 func (u KeyInt32) ToString() string {
 	return strconv.Itoa(int(u))
 }

@@ -11,6 +11,9 @@ type KeyString String
 func (this String) ToString() string {
 	return string(this)
 }
+func (this String) String() string {
+	return string(this)
+}
 func (this String) ToInt() (value int) {
 	var err error
 	value, err = strconv.Atoi(this.ToString())
@@ -87,6 +90,9 @@ func CreateStrings(addition uint32, keys ...Key) Strings {
 	return strings
 }
 
+func (this Strings) String() string {
+	return this.ToString()
+}
 func (this Strings) ToString() string {
 	var stringKey string
 	if this.key1 != nil {

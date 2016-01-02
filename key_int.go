@@ -19,6 +19,9 @@ func (u *KeyInt) FromString(str string) bool {
 	return true
 }
 
+func (u KeyInt) String() string {
+	return u.ToString()
+}
 func (u KeyInt) ToString() string {
 	return strconv.Itoa(u.ToInt())
 }

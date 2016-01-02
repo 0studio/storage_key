@@ -21,6 +21,9 @@ func (u *KeyUint64) FromString(str string) bool {
 	return true
 }
 
+func (u KeyUint64) String() string {
+	return strconv.FormatUint(uint64(u), 10)
+}
 func (u KeyUint64) ToString() string {
 	return strconv.FormatUint(uint64(u), 10)
 }

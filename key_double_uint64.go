@@ -22,6 +22,9 @@ func (u *KeyDoubleUint64) FromString(str string) bool {
 	return err == nil
 }
 
+func (u KeyDoubleUint64) String() string {
+	return u.ToString()
+}
 func (u KeyDoubleUint64) ToString() string {
 	return strconv.FormatUint(u.key1, 10) + "-" + strconv.FormatUint(u.key2, 10)
 }

@@ -25,8 +25,11 @@ func (u *KeyUint64Int32) FromString(str string) bool {
 	return err == nil
 }
 
-func (u KeyUint64Int32) ToString() string {
+func (u KeyUint64Int32) String() string {
 	return strconv.FormatUint(u.key1, 10) + "-" + strconv.Itoa(int(u.key2))
+}
+func (u KeyUint64Int32) ToString() string {
+	return u.String()
 }
 func (u KeyUint64Int32) GetKeys() (key1 uint64, key2 int32) {
 	key1 = u.key1

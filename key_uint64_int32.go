@@ -31,11 +31,7 @@ func (u KeyUint64Int32) String() string {
 func (u KeyUint64Int32) ToString() string {
 	return u.String()
 }
-func (u KeyUint64Int32) GetKeys() (key1 uint64, key2 int32) {
-	key1 = u.key1
-	key2 = u.key2
-	return
-}
+
 func (u KeyUint64Int32) ToInt() int {
 	return int(u.key1) + int(u.key2)
 }
@@ -57,10 +53,6 @@ func (u KeyUint64Int32) GetKey1() (key1 uint64) {
 func (u KeyUint64Int32) GetKey2() (key2 int32) {
 	key2 = u.key2
 	return
-}
-func (u *KeyUint64Int32) SetKeys(key1 uint64, key2 int32) {
-	u.key1 = key1
-	u.key2 = key2
 }
 
 type KeyUint64Int32List []KeyUint64Int32

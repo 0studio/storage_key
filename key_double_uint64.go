@@ -28,11 +28,7 @@ func (u KeyDoubleUint64) String() string {
 func (u KeyDoubleUint64) ToString() string {
 	return strconv.FormatUint(u.key1, 10) + "-" + strconv.FormatUint(u.key2, 10)
 }
-func (u KeyDoubleUint64) GetKeys() (key1, key2 uint64) {
-	key1 = u.key1
-	key2 = u.key2
-	return
-}
+
 func (u KeyDoubleUint64) ToInt() int {
 	return int(u.key1 + u.key2)
 }
@@ -55,37 +51,9 @@ func (u KeyDoubleUint64) GetKey2() (key2 uint64) {
 	key2 = u.key2
 	return
 }
-func (u KeyDoubleUint64) GetOtherKey(myUin uint64) (ret uint64, ok bool) {
-	if myUin == u.key1 {
-		ok = true
-		ret = u.key2
-		return
-	} else if myUin == u.key2 {
-		ok = true
-		ret = u.key1
-		return
-	}
-
-	return
-}
-func (u *KeyDoubleUint64) SetKeys(key1, key2 uint64) {
-	u.key1 = key1
-	u.key2 = key2
-}
 
 type KeyDoubleUint64List []KeyDoubleUint64
 
-func (keys KeyDoubleUint64List) GetOtherKeyList(myUin uint64) (retList []uint64) {
-	var otherKey uint64
-	var ok bool
-	for _, u := range keys {
-		otherKey, ok = u.GetOtherKey(myUin)
-		if ok {
-			retList = append(retList, otherKey)
-		}
-	}
-	return
-}
 func (keys KeyDoubleUint64List) Remove(Key KeyDoubleUint64) (ret KeyDoubleUint64List) {
 	ret = make(KeyDoubleUint64List, len(keys), len(keys))
 	var index int = 0
